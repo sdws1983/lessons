@@ -1,6 +1,5 @@
 ---
 theme: seriph
-class: text-center
 highlighter: shiki
 lineNumbers: false
 info: |
