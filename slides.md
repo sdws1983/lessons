@@ -1,6 +1,5 @@
 ---
 theme: seriph
-background: https://source.unsplash.com/collection/94734566/1920x1080
 class: text-center
 highlighter: shiki
 lineNumbers: false
@@ -16,542 +15,642 @@ defaults:
 transition: slide-left
 title: Welcome to Slidev
 mdc: true
-monaco: true
-monacoTypesSource: local # or cdn or none
-monacoTypesAdditionalPackages:
-  - '@slidev/types'
+colorSchema: 'light'
+canvasWidth: 830
 ---
 
-# Welcome to Slidev
+---
+layout: cover
+background: 'lesson1/cover.jpg'
+---
+# 数据整合及可视化之美
+### The beauty of data integration and visualization
+未来技术学院（海峡联合研究院）
 
-Presentation slides for developers
+黄育敏
 
-<div class="pt-12">
-  <span @click="$slidev.nav.next" class="px-2 py-1 rounded cursor-pointer" hover="bg-white bg-opacity-10">
-    Press Space for next page <carbon:arrow-right class="inline"/>
-  </span>
-</div>
-
-<div class="abs-br m-6 flex gap-2">
-  <button @click="$slidev.nav.openInEditor()" title="Open in Editor" class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon:edit />
-  </button>
-  <a href="https://github.com/slidevjs/slidev" target="_blank" alt="GitHub" title="Open in GitHub"
-    class="text-xl slidev-icon-btn opacity-50 !border-none !hover:text-white">
-    <carbon-logo-github />
-  </a>
-</div>
-
-<!--
-The last comment block of each slide will be treated as slide notes. It will be visible and editable in Presenter Mode along with the slide. [Read more in the docs](https://sli.dev/guide/syntax.html#notes)
--->
 
 ---
 transition: fade-out
 ---
 
-# What is Slidev?
 
-Slidev is a slides maker and presenter designed for developers, consist of the following features
 
-- 📝 **Text-based** - focus on the content with Markdown, and then style them later
-- 🎨 **Themable** - theme can be shared and used with npm packages
-- 🧑‍💻 **Developer Friendly** - code highlighting, live coding with autocompletion
-- 🤹 **Interactive** - embedding Vue components to enhance your expressions
-- 🎥 **Recording** - built-in recording and camera view
-- 📤 **Portable** - export into PDF, PNGs, or even a hostable SPA
-- 🛠 **Hackable** - anything possible on a webpage
+# 数据整合及可视化之美
 
-<br>
-<br>
+<v-clicks>
 
-Read more about [Why Slidev?](https://sli.dev/guide/why)
+### 课程简介
+ - 本课程以R语言为基础，旨在培养学生对数据整合和可视化的理解与应用能力。通过学习R语言的基本数据处理操作、数据整合方法、图表类型以及颜色选取原则，学生将能够运用所学知识有效地处理和呈现数据，提高数据分析和可视化的实际能力。
 
-<!--
-You can have `style` tag in markdown to override the style for the current page.
-Learn more: https://sli.dev/guide/syntax#embedded-styles
--->
 
-<style>
-h1 {
-  background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-}
-</style>
 
-<!--
-Here is another comment.
--->
-
----
-layout: default
----
-
-# Table of contents
-
-```html
-<Toc minDepth="1" maxDepth="1"></Toc>
-```
-
-<Toc maxDepth="1"></Toc>
-
----
-transition: slide-up
-level: 2
----
-
-# Navigation
-
-Hover on the bottom-left corner to see the navigation's controls panel, [learn more](https://sli.dev/guide/navigation.html)
-
-## Keyboard Shortcuts
-
-|     |     |
-| --- | --- |
-| <kbd>right</kbd> / <kbd>space</kbd>| next animation or slide |
-| <kbd>left</kbd>  / <kbd>shift</kbd><kbd>space</kbd> | previous animation or slide |
-| <kbd>up</kbd> | previous slide |
-| <kbd>down</kbd> | next slide |
-
-<!-- https://sli.dev/guide/animations.html#click-animations -->
-<img
-  v-click
-  class="absolute -bottom-9 -left-7 w-80 opacity-50"
-  src="https://sli.dev/assets/arrow-bottom-left.svg"
-  alt=""
-/>
-<p v-after class="absolute bottom-23 left-45 opacity-30 transform -rotate-10">Here!</p>
-
----
-layout: image-right
-image: https://source.unsplash.com/collection/94734566/1920x1080
----
-
-# Code
-
-Use code snippets and get the highlighting directly, and even types hover![^1]
-
-```ts {all|5|7|7-8|10|all} twoslash
-// TwoSlash enables TypeScript hover information
-// and errors in markdown code blocks
-// More at https://shiki.style/packages/twoslash
-
-import { computed, ref } from 'vue'
-
-const count = ref(0)
-const doubled = computed(() => count.value * 2)
-
-doubled.value = 2
-```
-
-<arrow v-click="[4, 5]" x1="350" y1="310" x2="195" y2="334" color="#953" width="2" arrowSize="1" />
-
-<!-- This allow you to embed external code blocks -->
-<<< @/snippets/external.ts#snippet
-
-<!-- Footer -->
-[^1]: [Learn More](https://sli.dev/guide/syntax.html#line-highlighting)
-
-<!-- Inline style -->
-<style>
-.footnotes-sep {
-  @apply mt-5 opacity-10;
-}
-.footnotes {
-  @apply text-sm opacity-75;
-}
-.footnote-backref {
-  display: none;
-}
-</style>
-
-<!--
-Notes can also sync with clicks
-
-[click] This will be highlighted after the first click
-
-[click] Highlighted with `count = ref(0)`
-
-[click:3] Last click (skip two clicks)
--->
-
----
-level: 2
----
-
-# Shiki Magic Move
-
-(this feature is still experimental)
-
-Powered by [shiki-magic-move](https://shiki-magic-move.netlify.app/), Slidev supports animations across multiple code snippets.
-
-Add multiple code blocks and wrap them with <code>````md magic-move</code> (four backticks) to enable the magic move. For example:
-
-````md magic-move
-```ts
-const author = reactive({
-  name: 'John Doe',
-  books: [
-    'Vue 2 - Advanced Guide',
-    'Vue 3 - Basic Guide',
-    'Vue 4 - The Mystery'
-  ]
-})
-```
-```ts
-export default {
-  data() {
-    return {
-      author: {
-        name: 'John Doe',
-        books: [
-          'Vue 2 - Advanced Guide',
-          'Vue 3 - Basic Guide',
-          'Vue 4 - The Mystery'
-        ]
-      }
-    }
-  }
-}
-```
-```ts
-export default {
-  data: () => ({
-    author: {
-      name: 'John Doe',
-      books: [
-        'Vue 2 - Advanced Guide',
-        'Vue 3 - Basic Guide',
-        'Vue 4 - The Mystery'
-      ]
-    }
-  })
-}
-```
-````
+</v-clicks>
 
 ---
 
-# Components
 
-<div grid="~ cols-2 gap-4">
-<div>
+# 数据整合及可视化之美
 
-You can use Vue components directly inside your slides.
 
-We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your custom components is also super easy.
+### 课程目标
 
-```html
-<Counter :count="10" />
-```
+<v-clicks>
 
-<!-- ./components/Counter.vue -->
-<Counter :count="10" m="t-4" />
+ - 0.  理解数据整合及可视化的作用和意义。
+ - 1.  熟练掌握R语言的基本数据处理操作和常见数据类型。
+ - 2.  了解并掌握数据整合的基本方法，能够进行多表合并和数据重塑。
+ - 3.  能够创建和定制各种基本图表类型，如散点图、折线图、柱状图等。
+ - 4.  掌握高级图表类型的绘制，包括热图、箱线图、雷达图等。
+ - 5.  熟悉常用的R包和软件，能够灵活运用于实际数据分析与可视化。
+ - 6.  了解颜色选取的原则，能够合理运用颜色进行图表渲染。
+ - 7.  具备通过R语言进行数据整合和可视化的实际能力。
 
-Check out [the guides](https://sli.dev/builtin/components.html) for more.
-
-</div>
-<div>
-
-```html
-<Tweet id="1390115482657726468" />
-```
-
-<Tweet id="1390115482657726468" scale="0.65" />
-
-</div>
-</div>
-
-<!--
-Presenter note with **bold**, *italic*, and ~~striked~~ text.
-
-Also, HTML elements are valid:
-<div class="flex w-full">
-  <span style="flex-grow: 1;">Left content</span>
-  <span>Right content</span>
-</div>
--->
-
----
-class: px-20
----
-
-# Themes
-
-Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
-
-<div grid="~ cols-2 gap-2" m="t-2">
-
-```yaml
----
-theme: default
----
-```
-
-```yaml
----
-theme: seriph
----
-```
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true" alt="">
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true" alt="">
-
-</div>
-
-Read more about [How to use a theme](https://sli.dev/themes/use.html) and
-check out the [Awesome Themes Gallery](https://sli.dev/themes/gallery.html).
+</v-clicks>
 
 ---
 
-# Clicks Animations
+# 数据整合及可视化之美
 
-You can add `v-click` to elements to add a click animation.
+<v-clicks>
 
-<div v-click>
+### 学分/学时：
+ - 16
+### 学时分配:
+ - 第2-7周（跳过清明假期），每周3学时
+ - 第8周，1学时，实践报告
+### 课程考核：
+ - 平时25%
+ - 课堂15%
+ - 期末60%
+### 上课要求：
+ - 请带上电脑，随堂操作
 
-This shows up when you click the slide:
-
-```html
-<div v-click>This shows up when you click the slide.</div>
-```
-
-</div>
-
-<br>
-
-<v-click>
-
-The <span v-mark.red="3"><code>v-mark</code> directive</span>
-also allows you to add
-<span v-mark.circle.orange="4">inline marks</span>
-, powered by [Rough Notation](https://roughnotation.com/):
-
-```html
-<span v-mark.underline.orange>inline markers</span>
-```
-
-</v-click>
-
-<div mt-20 v-click>
-
-[Learn More](https://sli.dev/guide/animations#click-animations)
-
-</div>
-
----
-preload: false
----
-
-# Motions
-
-Motion animations are powered by [@vueuse/motion](https://motion.vueuse.org/), triggered by `v-motion` directive.
-
-```html
-<div
-  v-motion
-  :initial="{ x: -80 }"
-  :enter="{ x: 0 }">
-  Slidev
-</div>
-```
-
-<div class="w-60 relative mt-6">
-  <div class="relative w-40 h-40">
-    <img
-      v-motion
-      :initial="{ x: 800, y: -100, scale: 1.5, rotate: -50 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-square.png"
-      alt=""
-    />
-    <img
-      v-motion
-      :initial="{ y: 500, x: -100, scale: 2 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-circle.png"
-      alt=""
-    />
-    <img
-      v-motion
-      :initial="{ x: 600, y: 400, scale: 2, rotate: 100 }"
-      :enter="final"
-      class="absolute top-0 left-0 right-0 bottom-0"
-      src="https://sli.dev/logo-triangle.png"
-      alt=""
-    />
-  </div>
-
-  <div
-    class="text-5xl absolute top-14 left-40 text-[#2B90B6] -z-1"
-    v-motion
-    :initial="{ x: -80, opacity: 0}"
-    :enter="{ x: 0, opacity: 1, transition: { delay: 2000, duration: 1000 } }">
-    Slidev
-  </div>
-</div>
-
-<!-- vue script setup scripts can be directly used in markdown, and will only affects current page -->
-<script setup lang="ts">
-const final = {
-  x: 0,
-  y: 0,
-  rotate: 0,
-  scale: 1,
-  transition: {
-    type: 'spring',
-    damping: 10,
-    stiffness: 20,
-    mass: 2
-  }
-}
-</script>
-
-<div
-  v-motion
-  :initial="{ x:35, y: 40, opacity: 0}"
-  :enter="{ y: 0, opacity: 1, transition: { delay: 3500 } }">
-
-[Learn More](https://sli.dev/guide/animations.html#motion)
-
-</div>
+</v-clicks>
 
 ---
 
-# LaTeX
+# 数据整合及可视化之美
 
-LaTeX is supported out-of-box powered by [KaTeX](https://katex.org/).
 
-<br>
+### 期末实践报告：
 
-Inline $\sqrt{3x-1}+(1+x)^2$
+<v-clicks>
 
-Block
-$$ {1|3|all}
-\begin{array}{c}
+ - 30人，分5组，每组6人（组长一人）
+ - 收集感兴趣的话题相关的数据（积极、正面、有意义，内容尽量不要重复）
+ - 运用所学知识进行数据整合及可视化展示
+ - 组内成员分工进行
+ - 完成一个小型数据可视化项目，包括选题、数据收集、处理，并最终由组长进行展示
+ - 根据数据选题、运用的技术手段、临场发挥以及最终效果进行打分
+ - 可以尽早准备
 
-\nabla \times \vec{\mathbf{B}} -\, \frac1c\, \frac{\partial\vec{\mathbf{E}}}{\partial t} &
-= \frac{4\pi}{c}\vec{\mathbf{j}}    \nabla \cdot \vec{\mathbf{E}} & = 4 \pi \rho \\
-
-\nabla \times \vec{\mathbf{E}}\, +\, \frac1c\, \frac{\partial\vec{\mathbf{B}}}{\partial t} & = \vec{\mathbf{0}} \\
-
-\nabla \cdot \vec{\mathbf{B}} & = 0
-
-\end{array}
-$$
-
-<br>
-
-[Learn more](https://sli.dev/guide/syntax#latex)
+</v-clicks>
 
 ---
-
-# Diagrams
-
-You can create diagrams / graphs from textual descriptions, directly in your Markdown.
-
-<div class="grid grid-cols-4 gap-5 pt-4 -mb-6">
-
-```mermaid {scale: 0.5, alt: 'A simple sequence diagram'}
-sequenceDiagram
-    Alice->John: Hello John, how are you?
-    Note over Alice,John: A typical interaction
-```
-
-```mermaid {theme: 'neutral', scale: 0.8}
-graph TD
-B[Text] --> C{Decision}
-C -->|One| D[Result 1]
-C -->|Two| E[Result 2]
-```
-
-```mermaid
-mindmap
-  root((mindmap))
-    Origins
-      Long history
-      ::icon(fa fa-book)
-      Popularisation
-        British popular psychology author Tony Buzan
-    Research
-      On effectivness<br/>and features
-      On Automatic creation
-        Uses
-            Creative techniques
-            Strategic planning
-            Argument mapping
-    Tools
-      Pen and paper
-      Mermaid
-```
-
-```plantuml {scale: 0.7}
-@startuml
-
-package "Some Group" {
-  HTTP - [First Component]
-  [Another Component]
-}
-
-node "Other Groups" {
-  FTP - [Second Component]
-  [First Component] --> FTP
-}
-
-cloud {
-  [Example 1]
-}
-
-database "MySql" {
-  folder "This is my folder" {
-    [Folder 3]
-  }
-  frame "Foo" {
-    [Frame 4]
-  }
-}
-
-[Another Component] --> [Example 1]
-[Example 1] --> [Folder 3]
-[Folder 3] --> [Frame 4]
-
-@enduml
-```
-
-</div>
-
-[Learn More](https://sli.dev/guide/syntax.html#diagrams)
-
----
-src: ./pages/multiple-entries.md
-hide: false
+layout: two-cols
 ---
 
+#### 《R语言实战（第3版）》
+ - 作者：[美]罗伯特 · I. 卡巴科弗
+ - 出版社：人民邮电出版社
+
+![public目录下的1.png文件](/lesson1/1.png)
+
+
+
+::right::
+
+#### 《ggplot2：数据分析与图形艺术》
+ - 作者: [美]哈德利•威克姆
+ - 出版社: 西安交通大学出版社
+
+![public目录下的1.png文件](/lesson1/3.jpg)
+
+
+---
+layout: two-cols
 ---
 
-# Monaco Editor
+#### R语言 cookbook
+ - [http://www.cookbook-r.com/Graphs/](http://www.cookbook-r.com/Graphs/)
 
-```ts {monaco}
-import { ref } from 'vue'
-import hello from './external'
+![public目录下的1.png文件](/lesson1/r.png)
 
-const code = ref('const a = 1')
-hello()
-```
+
+
+::right::
+
+#### ggplot2官方文档
+ - [https://ggplot2.tidyverse.org/reference/index.html](https://ggplot2.tidyverse.org/reference/index.html)
+
+![public目录下的1.png文件](/lesson1/ggplot2.png)
+
 
 ---
 layout: center
-class: text-center
 ---
 
-# Learn More
+# 第一章：导论
 
-[Documentations](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/showcases.html)
+---
+
+# 全球数据爆发
+
+随着物联网、边缘计算等智能终端设备不断普及，受到来自物联网设备信号、元数据、娱乐相关数据、云计算和边缘计算的数据增长的驱动，全球数据量呈现加速增长。根据IDC分布的《数据时代2025》预测，全球数据量将从2018年的33ZB增至2025年的175ZB，增长超过5倍；中国平均增速快于全球3%，预计到2025年将增至48.6ZB，占全球数据圈的比例由23.4%提升至27.8%。
+
+<img src="/lesson1/shujubaofa.png" class="m-0 h-60 rounded shadow" />
+
+
+---
+
+# 数据单位
+
+ - 1KB (Kilobyte 千字节)=1024B,
+ - 1MB (Megabyte 兆字节 简称“兆”)=1024KB，
+ - 1GB (Gigabyte 吉字节 又称“千兆”)=1024MB,
+ - 1TB (Trillionbyte 万亿字节 太字节)=1024GB,
+ - 1PB (Petabyte 千万亿字节 拍字节)=1024TB,
+ - 1EB (Exabyte 百亿亿字节 艾字节)=1024PB,
+ - 1ZB (Zettabyte 十万亿亿字节 泽字节)= 1024 EB,
+ - 1YB (Yottabyte 一亿亿亿字节 尧字节)= 1024 ZB,
+ - 1BB (Brontobyte 一千亿亿亿字节)= 1024 YB.
+
+---
+
+# 实际情况
+
+数据量及接入设备的猛增将带来全球数据总量的飞速增长，据IDC预计，2020年全球数据总量将达到44ZB，2035年将达到19267ZB，CAGR=50%。
+
+![public目录下的1.png文件](/lesson1/shujubaofa2.png)
+
+---
+
+# 农业大数据
+
+农业大数据是农业领域全要素、全时、全域、全样本的数据集合，并应用大数据理念、技术和方法来处理这些数据集
+
+![public目录下的1.png文件](/lesson1/nydsj.png)
+
+---
+
+# 农业大数据的发展
+
+ - 英国政府2013年正式启动“农业技术战略”,提出充分利用大数据等技术,一方面实现精准种植和精细养殖,另一方面大力提升农产品的生产和消费市场的对接能力。
+ - 美国提出公共部门与私人部门共同投入的模式来建设规模较大的农业数据中心,促进农业数据的使用,提高农业管理水平。
+ - 法国利用已建立的农业数据库,通过互联网络等信息发布渠道,定期发布信息来服务农业生产,管控农产品销售环节的市场秩序。
+ - 德国将云端的天气、土壤、降水、温度、地理位置等数据及其分析处理结果发送到大型农业智能机械上,实现精准作业,发展更高水平的数字农业
+ - 近年来,我国农业大数据的研究与应用发展较快。农业物联网区域试验工程和天空地数字农业规划促进了农业数据采集技术体系的形成,互联网+农业的理念促进了各类农业信息平台和数字化管理系统的发展,数字技术的应用正向着产前、产中、产后的整个农业生产过程延伸
+
+---
+
+# 国家农业科学数据中心
+
+[https://www.agridata.cn/#/home](https://www.agridata.cn/#/home)
+
+<img src="/lesson1/nysjkxzx.png" class="m-10 h-70" />
+
+---
+
+# 生物大数据
+
+生物大数据指的是在生物学研究中产生、收集和分析的大量数据。这些数据涵盖了从分子层面到生态系统层面的各种生物学信息
+
+
+<img src="/lesson1/swdsj.jpg" class="m-10 h-70" />
+
+
+---
+
+# 生物数据获取成本的下降
+
+自2008年以来，摩尔定律不再是DNA测序成本的准确预测因子，因为它们在大规模并行测序技术（https://www.genome.gov/sequencingcosts/）到来后下降了几个数量级。
+
+<img src="/lesson1/cost.png" class="m-10 h-70" />
+
+---
+
+# 生物大数据的爆发
+
+这导致公共数据库（如GenBank和WGS ）中的序列呈指数增长（如下图所示），引发了人们对大数据问题的进一步关注。事实上，科学界现在已经产生了超过exabyte（10的18次方）的数据。
+
+<img src="/lesson1/ncbi.png" class="m-10 h-50" />
+
+
+---
+
+# 利用率极低
+
+虽然公共数据资源如此丰富，但目前国内研究者并不能高效的对这些公共数据进行有效整合利用，生物大数据未来发展如何？早在2016年，Nature reviews genetics便报道称，目前已发表的高通量测序数据利用率不足20%，很多有价值的信息被研究者所忽略。
+
+<img src="/lesson1/ncbi2.png" class="m-10 h-50" />
+
+---
+
+# 如何解决？
+
+<img src="/lesson1/chg.jpeg" class="m-10 h-80" />
+
+---
+
+# 数据整合和可视化
+
+在大数据时代，信息过载成为日常生活中的常见问题。如何有效抓取数据中的关键信息并直观呈现，以支持决策和洞见，这成为数据可视化的重要使命。
+
+---
+
+# 什么是数据整合？
+  - 是把在不同数据源的数据收集、整理、清洗，转换后加载到一个新的数据源，为数据消费者提供统一数据视图的方式（像“理线”的过程）。
+
+  <img src="/lesson1/sjql.png" class="m-10 h-60" />
+
+---
+
+# 数据整合的优点
+  - 提高数据质量：通过数据整合，可以消除不一致性、重复性和错误性等问题，从而提高数据的质量和准确性。
+  - 增强数据分析能力：数据整合可以将不同来源的数据整合在一起，从而获得更全面、更完整的数据，为数据分析提供更多的资源和支持。
+  - 减少工作量和时间：在进行数据分析前，通常需要整合数据。如果数据整合自动化，可以减少人工处理的时间和工作量。
+  - 支持实时数据分析：数据整合可以将实时数据与历史数据整合在一起，以支持实时数据分析，从而更快地做出决策。
+  - 支持决策制定：数据整合可以提供更全面、更准确的数据，帮助决策者更好地制定决策。
+
+---
+layout: two-cols
+---
+
+# 常见数据整合工具
+## Excel
+Excel作为入门级的工具，是最基础也是最主要的数据分析工具。Excel具备多种强大功能，比如创建表单，数据透视表，VBA等，Excel的系统如此庞大，以至于没有任何一项分析工具可以超越它，确保了大家可以根据自己的需求分析数据。它能够满足绝大部分数据分析工作的需求，同时也提供相当友好的操作界面，对于具备基本统计学理论的用户来说是十分容易上手的，但处理的数据量较小。
+
+::right::
+
+<img src="/lesson1/excel.jpeg" class="m-10 h-60" />
+
+---
+layout: two-cols
+---
+
+## SPSS
+  SPSS是世界上最早采用图形菜单驱动界面的统计软件，它最突出的特点就是操作界面极为友好，输出结果美观漂亮。用户只要掌握一定的Windows操作技能，精通统计分析原理，就可以使用该软件为特定的科研工作服务。SPSS采用类似EXCEL表格的方式输入与管理数据，数据接口较为通用，能方便的从其他数据库中读入数据。其统计过程包括了常用的、较为成熟的统计过程，完全可以满足非统计专业人士的工作需要。
+
+::right::
+
+<img src="/lesson1/spss.jpg" class="m-10 h-60" />
+
+---
+
+## R 和 Python
+  随着大数据重要性的大幅增长，数据科学在软件行业中的两种语言已成为最受开发人员欢迎的语言——R 和 Python 已成为数据科学家和数据分析师最喜欢的两种语言。
+
+<img src="/lesson1/rpython.png" class="m-10 h-60" />
+
+---
+
+## R 和 Python 的主要差异
+
+<div class="parent" style="width:600px;height:480px;text-align:center;">
+<video controls autoplay name="media">
+  <source src="/lesson1/R vs Python.mp4" type="video/mp4">
+</video>
+</div>
+
+---
+
+## R 和 Python 的主要差异
+
+  <img src="/lesson1/diff.jpg" class="m-10 h-60" />
+
+---
+layout: two-cols
+---
+
+## BI工具
+  BI工具即商业智能（Business Intelligence）分析工具的英文缩写。它是一套完整的解决方案，用来将企业中现有的数据进行有效的整合，快速准确的提供报表并提出决策依据，帮助企业做出明智的业务经营决策。商业智能的概念最早在1996年提出。当时将商业智能定义为一类由数据仓库（或数据集市）、查询报表、数据分析、数据挖掘、数据备份和恢复等部分组成的、以帮助企业决策为目的技术及其应用。
+
+ - 塔谱软件 (Tableau Software)
+ - FineBI （帆软）
+
+::right::
+
+<video controls autoplay name="media" style="margin: 15px; line-height: 1.5; text-align: center">
+  <source src="/lesson1/2022bi6.mp4" type="video/mp4">
+</video>
+
+---
+
+# ETL (Extract, Transform, Load) 
+
+ - <font color=red>ETL</font>，全称 <font color=red>**Extract-Transform-Load**</font>，它是将大量的原始数据经过<font color=red><u>提取（extract）</u>、<u>转换（transform）</u>、<u>加载（load）</u></font>到目标存储数据仓库的过程。ETL 虽然大部分应用在大数据领域，对小数据也可以经过这个过程的处理。
+
+<img src="/lesson1/etl-process.jpg" class="m-10 h-60" />
+  
+
+---
+
+## 提取 extract
+
+<br>
+
+在提取阶段，解决的是数据来源问题。数据的格式和形式一般有以下几种：
+
+
+ - 关系型数据库 SQL，RDBMS
+ - 文件型数据库 NoSQL
+ - 日志文件
+ - XML/Html
+ - JSON
+ - CSV/TSV（flat files）
+ - 等等
+  
+---
+
+## 转换 transform
+
+<br>
+
+弄清楚了数据来源，前边做了数据的整合，对文件格式进行了一些处理。本步骤，我们用一些规则、方法进行数据处理。一般常见的转换操作有：
+
+<div style="font-size:14px; "> 
+
+ - **筛选**：筛选部分数据，或者部分字段，提取一部分有用的数据
+ - **清理**：缺失值填充、默认值设定、枚举映射等，如将一些编码转为可识别的符号，比如省份代码 sh 转为「上海」
+ - **合并**：将多个属性合并在一起
+ - **格式转换**：如原数据是一下个时间戳（timestamp），我们为了方便后续分析转换为时间格式，指定时区
+ - **拆分**：将单个属性值拆分为多个属性值，如原为一个邮编，拆分解析成省份、城市等多个字段
+ - **排序**：按期望的数据顺序进行排列
+ - **计算**：如原数据为年龄，用当前年份减去年龄同，取得出生年份
+
+</div>
+
+<br>
+
+---
+
+## 转换 transform
+
+<br>
+
+### 原则：
+ - 建数仓时尽量保留原始数据，支持多样需求
+ - 为特定报表时尽量取所需要的数据
+  
+---
+
+## 加载 load
+
+<br>
+
+数据的加载方式一般有以下两种重要类型：
+
+ - **全量加载（Full load / Bulk load）**
+
+ 全量一般是第一次进行数据加载，这个过程比较长，也有种情况是业务数据存在历史全量数据不停更新的情况，这种情况无论何时都需要全量加载。还有一种情况会追溯一定的时间周期内的数据进行加载，如此业务30天之前的数据不会有再任何变化。
+
+ - **增量加载（Incremental load / Refresh load）**
+
+ 增加加载最为常见，一般一日加载一次，加载上一日数据，也有一周或者一月加载一次的。
+
+<br>
+
+---
+
+## 加载 load
+
+<br>
+
+除了增加新增加数据，加载同时伴随着对已加载数据的修改。选择何种加载类型，以及加载周期、加载内容，要看具体业务，产品经理和分析师分析需求最终确定一个最优的方案。
+
+---
+
+## 数据整合的未来
+
+<br>
+
+回顾国内外大数据技术在管理、处理、分析与治理四个方面近十年的发展，可以看出：
+
+ - 数据规模高速增长，现有处理计算能力已经成为瓶颈；
+ - 数据成为生产要素，但数据价值释放不充分；
+ - 从产业生态重点的变迁看，呈现出“应用先于理论技术，市场先于标准法规”的现象，虽然大数据已经在一些应用领域（特别是互联网领域）取得了较好的成效，但是大数据基础理论和应用技术不成熟，大数据治理体系远未建立。
+
+总体上，大数据发展仍然处于初级阶段。面向未来，在大数据应用需求驱动下，计算技术体系有必要进行重构，以数据为中心的新型大数据系统技术成为重要方向，信息技术体系将从“计算为中心”向“数据为中心”转型，新的基础理论和核心技术问题仍有待探索和突破。
+
+---
+layout: two-cols
+---
+
+# 数据整合之后？
+
+股票首页界面：
+
+<img src="/lesson1/27.jpg" class="m-10 h-60" />
+  
+::right::
+
+<br>
+
+k线：
+
+<img src="/lesson1/27-2.png" class="m-10 h-60" />
+  
+
+---
+layout: two-cols
+---
+
+## 什么是可视化
+
+<br>
+
+ - 将信息转换为可视化上下文（例如地图或图形）的实践，以使人脑更容易理解数据并从中获取见解。
+
+<br>
+
+
+## 数据可视化的主要目标
+
+<br>
+
+ - 更容易识别大型数据集中的模式、趋势和异常值。该术语通常与其他术语互换使用，包括信息图形、信息可视化和统计图形。
+
+<br>
+
+::right::
+
+<img src="/lesson1/28.jpg" class="m-5 h-90" />
+
+---
+layout: two-cols
+---
+
+# 可视化的分类r
+
+
+数据可视化技术在应用过程中，多数非技术驱动，而是目标驱动：
+
+
+ - <font color=red>对比</font>：比较不同元素或不同时刻之间的值
+ - <font color=red>组成</font>：查看数据静态或动态组成
+ - <font color=red>趋势</font>：查看数据如何随着时间变化而变化。
+ - <font color=red>分布</font>：查看数据分布特征，是数据可视化最为常用的场景之一
+ - <font color=red>关系</font>：查看变量之间的相关性，常用于判断多个因素之间的影响关系
+
+::right::
+
+<img src="/lesson1/30.png" class="m-5 h-90" />
+
+---
+layout: two-cols
+---
+
+## 对比
+
+<br>
+
+展示事物的排列顺序是差不多，还是一个比另一个更多或更少呢？
+“大于”、“小于”或者“大致相当”都是比较相对关系中的关键词，这时候会首选<font color=red>条形图</font>。
+
+::right::
+
+<img src="/lesson1/31.png" class="m-5 h-90" />
+
+---
+
+## 组成
+
+<br>
+
+当对某一组数据中各个数值的占比进行分析时，饼图是最佳选择。
+如果你想表达的信息包括：“份额”、“百分比”以及“预计将达到百分之多少”，这时候可以用到<font color=red>饼图</font>。
+
+
+<img src="/lesson1/pie.png"/>
+
+---
+
+## 趋势
+
+<br>
+
+关心数据如何随着时间变化而变化，每周、每月、每年的变化趋势是增长、减少、上下波动或基本不变，这时候使用<font color=red>折线图</font>更好地表现指标随时间呈现的趋势 。
+
+<img src="/lesson1/season.png" class="m-5 h-60">
+
+---
+
+## 分布
+
+<br>
+
+关心各数值范围内各包含了多少项目，典型的信息会包含：“集中”、“频率”与“分布”等，这时候使用<font color=red>柱状图</font>
+
+<img src="/lesson1/bar.png"/>
+
+---
+layout: two-cols
+---
+
+## 关系
+
+<br>
+
+主要查看两个变量之间是否表达出我们预期所要证明的模式关系。这时候可以用<font color=red>散点图</font>来展示，用于表达“与……有关”、“随……而增长”、“随……而不同”变量间的关系。
+
+::right::
+
+<img src="/lesson1/sc.png" class="m-5 h-90" />
+
+---
+
+
+
+
+## 常见的数据整合工具概述
+  - ETL工具、数据集成平台的介绍。
+## ETL (Extract, Transform, Load) 过程解析
+  - 数据抽取、转换和加载的三个步骤的详细解释。
+## 数据整合工具的选择标准
+  - 用户需求、数据类型和预算等因素影响工具选择。
+## 实际应用场景示例
+  - 某公司如何通过数据整合工具优化业务流程。
+
+## 数据整合的挑战和解决方案
+  - 挑战：数据格式不一致、数据安全性问题。
+  - 解决方案：使用ETL工具、确保数据加密和权限控制。
+
+## 可视化简介
+## 什么是可视化？
+  - 可视化是通过图表、图形等方式将数据呈现为直观的形式。
+## 可视化的作用和优势
+  - 提高数据理解、促进洞察发现、加速决策过程。
+## 可视化的种类和方法
+  - 图表、地图、仪表板等不同类型的可视化方法。
+## 可视化与决策制定的关系
+  - 可视化为决策者提供清晰的数据呈现，帮助更好地制定决策。
+
+
+## 可视化工具
+## 常见的可视化工具概述
+  - Tableau、Power BI、matplotlib等工具的介绍。
+## 数据可视化的基本原则
+  - 简洁、清晰、有重点的原则。
+## 实例展示：使用可视化工具创建图表和仪表板
+  - 展示一个实际项目中如何使用可视化工具呈现数据。
+## 如何选择合适的可视化工具
+  - 用户需求、数据类型和使用场景是选择的关键因素。
+
+## 成功案例分析
+## 分析一些成功的数据整合和可视化案例
+  - 企业通过数据整合和可视化取得的成就。
+## 每个案例的背景
+  - 企业行业、规模和问题的介绍。
+## 使用的工具和技术
+  - 数据整合和可视化工具的具体使用。
+## 案例的关键要点和收获
+  - 从成功案例中学到的经验和教训。
+
+## 最佳实践
+## 数据整合和可视化的最佳实践
+  - 清晰的项目规划、合理的数据清洗策略。
+## 如何设计清晰、简洁、有效果的可视化图表
+  - 图表的选择、颜色的搭配等设计原则。
+## 如何确保数据整合的准确性和完整性
+  - 数据验证、测试和监控的方法。
+## 实际案例：避免常见的数据整合和可视化错误
+  - 分享一些常见错误及其避免方法。
+
+## 未来趋势
+## 数据整合和可视化领域的最新趋势
+  - 人工智能、增强现实在数据整合和可视化中的发展。
+## 机器学习在数据预测和趋势分析中的应用
+  - 实例展示：如何通过机器学习提升数据整合和可视化效果。
+## 可能出现的新技术和工具
+  - 探讨未来可能出现的数据整合和可视化工具。
+
+## 挑战与解决方案
+## 数据整合和可视化过程中可能面临的挑战
+  - 大数据处理、数据安全、实时处理等挑战。
+## 挑战的根本原因分析
+  - 指出每个挑战的原因。
+## 相应的解决方案和建议
+  - 提供解决方案，如采用云服务、加强数据治理等。
+## 案例研究：如何克服特定挑战
+  - 实例分享：某公司如何克服数据整合和可视化中的挑战。
+
+## 培训和资源
+## 学习数据整合和可视化的资源推荐
+  - 在线课程、培训材料、书籍推荐。
+## 培训课程和社区支持
+  - 数据整合和可视化社区的介绍。
+## 在线学习平台推荐
+  - 提供一些建议的在线学习平台链接。
+## 专业认证和培训机构介绍
+  - 数据整合和可视化领域的专业认证机构介绍。
+
+## 总结和展望
+## 对整个导论的关键点总结
+  - 强调数据整合和可视化的重要性和价值。
+## 数据整合和可视化的未来展望
+  - 探讨未来数据整合和可视化发展方向。
+## 鼓励学习和实践的结语
+  - 鼓励观众学习并在实际工作中应用所学知识。
+## 联系方式和答疑环节的安排
+  - 提供联系方式，鼓励观众在需要时进行咨询和答疑。
