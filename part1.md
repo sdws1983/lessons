@@ -408,7 +408,7 @@ SPSS是世界上<font color=red>最早采用图形菜单驱动界面的统计软
 <v-clicks>
 
 <div class="parent" style="width:600px;height:480px;text-align:center;">
-<video controls autoplay name="media">
+<video controls name="media">
   <source src="/lesson1/R vs Python.mp4" type="video/mp4">
 </video>
 </div>
@@ -438,7 +438,7 @@ BI工具即<font color=red>商业智能（Business Intelligence）</font>分析�
 
 <v-clicks>
 
-<video controls autoplay name="media" style="margin: 15px; line-height: 1.5; text-align: center">
+<video controls name="media" style="margin: 15px; line-height: 1.5; text-align: center">
   <source src="/lesson1/2022bi6.mp4" type="video/mp4">
 </video>
 

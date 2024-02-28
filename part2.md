@@ -59,9 +59,10 @@ layout: two-cols
 
 ::right::
 
-<v-clicks>
 
 <img src="/lesson2/2.png" class="m-10 h-60 rounded shadow" />
+
+<v-clicks>
 
 <font color=red>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;有图有真相！！！</font>
 
@@ -290,11 +291,11 @@ layout: two-cols
 
  - 《禹迹图》基本为正方形，**方位以北为上，定向上北下南，与现代地图一致**。
 
- - 该图采用“**计里画方**”的绘制方法，横方七十一，竖方七十三，全图总共有五千一百一十三个边长为1厘米的方格。
+ - “**计里画方**”的绘制方法，横方七十一，竖方七十三，全图总共有五千一百一十三个边长为1厘米的方格。
 
  - **每方折地百里，换算成比例尺相当于1：500万**。图中河流的位置、走向以及海岸轮廓线与现代实测编绘地图非常接近。
 
- - 不可否认的是，《禹迹图》表现出中国古代极为先进的科学技术水平，常常被认为**是中国古代地图高水平的象征，可以说古代没有任何一幅地图能达到如此高的精确度**。
+ - 不可否认的是，《禹迹图》表现出中国古代极为先进的科学技术水平，被认为**是中国古代地图高水平的象征，可以说古代没有任何一幅地图能达到如此高的精度**。
 
 
 </v-clicks>
@@ -317,7 +318,7 @@ layout: two-cols
 
 <v-clicks>
 
- - 爱德蒙·哈雷（Edmond Halley）在1686年绘制的图表，展示了世界地图上的贸易风和季风。
+ - 爱德蒙·哈雷（Edmond Halley）在1686年绘制的图表，展示了**世界地图上的贸易风和季风**。
  - “...每个小笔画的尖端指出了持续吹来风的地平线的那一部分；在那里有季风的地方，笔画的行交替向前和向后，这样它们比其他地方更密集。”
 
 </v-clicks>
@@ -330,12 +331,13 @@ layout: two-cols
 layout: two-cols
 ---
 
-### 利用地图绘制疾病模式：约翰·斯诺博士的著名点地图
+# 约翰·斯诺博士的著名点地图
 
 <br>
 
 <v-clicks>
 
+ - 利用地图绘制疾病模式。
  - 他在1854年9月绘制了伦敦中部霍乱死亡地点的地图。
  - 死亡地点用点标记，此外，该地区的十一个水泵用十字标出。
 
@@ -353,7 +355,7 @@ layout: two-cols
 layout: two-cols
 ---
 
-### 利用地图绘制疾病模式：约翰·斯诺博士的著名点地图
+# 约翰·斯诺博士的著名点地图
 
 <br>
 
@@ -361,11 +363,11 @@ layout: two-cols
 
 <v-clicks>
 
- - 斯诺观察到，通过地图表面的分布，霍乱几乎完全发生在那些住在（并饮用）布罗德街水泵附近的人群中。
+ - 斯诺观察到，通过地图表面的分布，霍乱**几乎完全发生在那些住在（并饮用）布罗德街水泵附近的人群中**。
  - 他拆除了受污染的水泵手柄，结束了这场已经夺去了500多条生命的邻里流行病。
- - 水泵位于地图的中心，DIN BROAD STREET的右侧。
+ - 水泵位于地图的中心，**DIN BROAD STREET的右侧**。
  - 当然，水泵与疾病之间的联系可能通过计算和分析而不使用图形就被揭示出来，需要一些好运和辛勤工作。
- - 但至少在这里，图形分析比计算更有效地证明了关于数据的信息。
+ - 但至少在这里，**图形分析比计算更有效地证明了关于数据的信息**。
 
 </v-clicks>
 
@@ -388,7 +390,7 @@ layout: two-cols
 
 <br>
 
-<div style="font-size:14px; "> 
+<div style="font-size:15px; "> 
 
 <v-clicks>
 
@@ -462,7 +464,7 @@ layout: two-cols
 
 <v-clicks> 
 
-<div style="font-size:14px; "> 
+<div style="font-size:13px; "> 
 
 图形应该保留给**更丰富、更复杂、更难处理**的统计材料。
 
@@ -472,7 +474,7 @@ layout: two-cols
 
 </v-clicks>
 
-<img src="/lesson2/12.png" class="m-5 h-75 rounded shadow" />
+<img src="/lesson2/12.png" class="m-5 h-72 rounded shadow" />
 
 ---
 
@@ -490,11 +492,7 @@ layout: two-cols
 <br>
 
 
-<v-clicks>
-
  - 现代TGV（高速列车）的路径显示在100年前的时刻表上：
-
-</v-clicks>
 
 
 ::right::
@@ -591,6 +589,8 @@ layout: two-cols
 
 # 时间序列的问题
 
+<br>
+
 <v-clicks> 
 
 
@@ -638,7 +638,7 @@ layout: two-cols
 
 <div style="font-size:10px; "> 
 
- - **“拿破仑东征图”**可能是可视化领域最知名的设计之一（Charles Joseph Minard，1781-1870）。
+ - **“拿破仑东征图”可能是可视化领域最知名的设计之一**（Charles Joseph Minard，1781-1870）。
  - E. J. Marey形容为**凭借其残酷的雄辩似乎违背了历史学家的笔触**。
 
 
@@ -900,7 +900,7 @@ layout: two-cols
  - 使用不规则的刻度来制造一种虚假下降。水平刻度上的前七个增量每个都是十年，掩盖了最右边的四年间隔。
 </div>
 
-<img src="/lesson2/30.png" class="m-0 h-65 rounded shadow" />
+<img src="/lesson2/30.png" class="m-10 h-65 rounded shadow" />
 
 ---
 layout: two-cols
@@ -909,6 +909,10 @@ layout: two-cols
 
 # 设计变异影响
 
+<br>
+
+<br>
+
  - 在这里，一个增长454%的变化被描绘成了4280%的增长，谎言因子为9.4：
 
 
@@ -916,7 +920,7 @@ layout: two-cols
 
 <br>
 
-<img src="/lesson2/31.png" class="m-10 h-55 rounded shadow" />
+<img src="/lesson2/31.png" class="m-7 h-65 rounded shadow" />
 
 ---
 
