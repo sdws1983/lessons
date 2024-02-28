@@ -1489,7 +1489,7 @@ layout: two-cols
 
 
 
-<img src="/lesson2/64.png" class="m-5 h-60 rounded shadow" />
+<img src="/lesson2/64.png" class="m-2 h-60 rounded shadow" />
 
 
 ---
@@ -1506,27 +1506,8 @@ layout: two-cols
 
 ::right::
 
-<img src="/lesson2/65.png" class="m-5 h-60 rounded shadow" />
+<img src="/lesson2/65.png" class="m-15 h-60 rounded shadow" />
 
-
-
----
-layout: two-cols
----
-
-
-# 细线条
-
-<br>
-
- - 数据图形中的线条应该很细。
- - 18世纪和19世纪的图形之所以看起来如此出色，原因之一是它们是在铜版上雕刻而成的，具有特征性的细如发丝的线条。
- - 20世纪机械绘图的制图钢笔加粗了线条，使其变得笨重和不吸引人。
- - 一种有效的美学手法是不同粗细线条的正交交叉（伯戈因·迪勒的抽象作品）：
-
-::right::
-
-<img src="/lesson2/66.png" class="m-5 h-60 rounded shadow" />
 
 
 ---
@@ -1553,10 +1534,12 @@ layout: two-cols
 
 # 比例与尺度：图形的形状
 
+<br>
+
  - 图形应该趋向于水平，长度大于高度：
 
 
-<img src="/lesson2/67.png" class="m-5 h-60 rounded shadow" />
+<img src="/lesson2/67.png" class="m-5 h-55 rounded shadow" />
 
 
 ---
@@ -1595,6 +1578,8 @@ layout: two-cols
  - 长度被划分为**较小部分与较大部分的比例等于较大部分与整体的比例**：
 
 ::right::
+
+<br>
 
 <img src="/lesson2/69.png" class="m-5 h-60 rounded shadow" />
 

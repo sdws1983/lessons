@@ -16,7 +16,7 @@ transition: fade-out
 
  - R软件是一款集成了数据操作、统计和可视化功能的优秀的开源软件。
  - R软件具备高效的数据处理和存储功能，擅长数据矩阵操作，提供了大量适用于数据分析的工具，支持各种数据可视化输出。
- - R软件的一大优势是分析人员可利用简单的R程序语言描述处理过程，以构建强大的分析功能。
+ - R软件的一大优势是分析者可利用简单的R语言描述处理过程，构建强大的分析功能。
  - 此外，R软件具备良好可扩展性，来自世界各地开源社区的研究者为其提供了各种丰富的工具包。
  - 由于R软件能结合各种挖掘算法，有效地简化数据分析过程，适用于数据挖掘领域。
 
@@ -26,8 +26,7 @@ transition: fade-out
 
 # R 的历史
 
-
-<br>
+<div style="font-size:13px; "> 
 
  - R语言来自S语言，是S语言的一个变种。S语言由Rick Becker, John Chambers, Alan Wilks等人在贝尔实验室开发， 著名的C语言、Unix系统也是贝尔实验室开发的。
  - S语言第一个版本开发于1976-1980，基于Fortran； 于1980年移植到Unix, 并对外发布源代码。 1984年出版的“棕皮书” (R. A. Becker and Chambers 1984) 总结了1984年为止的版本, 并开始发布授权的源代码。 这个版本叫做旧S，与我们现在用的S语言(R语言)有较大差别， 比如， 不支持自定义函数。
@@ -37,6 +36,7 @@ transition: fade-out
  - S语言商业版本为S-PLUS, 1988年发布，现在为Tibco Software拥有。 命运多舛，多次易主。现在已经基本被R语言取代。
  - R是一个自由源代码软件，GPL授权， 最初由新西兰Auckland大学的**Ross Ihaka和Robert Gentleman**于1997年发布， R实现了与S语言基本相同的功能和统计功能。 现在由R核心团队开发，但全世界的用户都可以贡献软件包。 
 
+</div>
 
 ---
 
@@ -57,15 +57,7 @@ transition: fade-out
 ---
 
 
-# R 语言和R 软件的技术特点
-
-
-### S语言作者，R语言专家J. M. Chambers((J. M. Chambers 2016))指出R的本质特征：
-
- - R中所有的存在都是对象；
- - R中发生的动作都是函数调用。
-
-### 详细地说R有如下技术特点：
+# R 语言和 R 软件的技术特点
 
  - 函数编程（functional programming）。R语言虽然不是严格的functional programming语言，但可以遵照其原则编程，得到可验证的可靠程序。
  - 支持对象类和类方法。基于对象的程序设计。
@@ -89,7 +81,7 @@ transition: fade-out
 <img src="/lesson3/1.png" class="m-0 h-60 rounded shadow" />
 
 
---
+---
 
 # R 的下载
 
@@ -101,7 +93,7 @@ transition: fade-out
 <img src="/lesson3/2.png" class="m-0 h-60 rounded shadow" />
 
 
---
+---
 
 # R 的下载
 
@@ -131,7 +123,8 @@ transition: fade-out
 
 
 
- - 按照步骤进行安装即可，特别注意的是，有需要选择安装位置的，<font color=red>请不要在安装路径中含有非英文字符</font>。
+ - 按照步骤进行安装即可.
+ - 特别注意的是，有需要选择安装位置的，<font color=red>请不要在安装路径中含有非英文字符</font>。
 
 
 <img src="/lesson3/5.png" class="m-0 h-60 rounded shadow" />
@@ -144,7 +137,8 @@ transition: fade-out
 
 
  - 选择全部的内容：
- - 安装结束，即可完成R开发环境的安装。R软件的安装比较简单，根据安装流程进行安装即可。
+ - 安装结束，即可完成R开发环境的安装。
+ - R软件的安装比较简单，根据安装流程进行安装即可。
 
 
 <img src="/lesson3/6.png" class="m-0 h-60 rounded shadow" />
@@ -154,14 +148,11 @@ transition: fade-out
 
 # RStudio
 
+<br>
 
-
- - 直接在 R 中输入 R 指令并不是很方便. 需要使用文本编辑输入, 修改, 存储, 然后再送到 R 执行. 
- - RStudio 软件是 R 软件的应用界面与增强系统，可以在其中编辑、运行R的程序文件，可以跟踪运行，还可以构造文字、R结果图表融合在一起的研究报告、论文、图书、网站等。 
+ - 直接在 R 中输入 R 指令并不是很方便. 需要使用文本编辑输入, 存储, 然后再送到 R 执行. 
+ - RStudio 软件是 R 软件的应用界面与增强系统，可以在其中编辑、运行R的程序文件，可以跟踪运行，还可以构造文字、R结果图表融合在一起的研究报告、论文、网站等。 
  - <font color=red>注意：必须先安装前面的R软件，RStudio只是集成开发软件，不自带R程序。</font>
-
-
-<img src="/lesson3/7.png" class="m-0 h-60 rounded shadow" />
 
 
 ---
@@ -175,7 +166,7 @@ transition: fade-out
  - 选择DOWNLOAD RSTUDIO FOR WINDOWS下载exe的文件进行后面的安装。（这里1：install R 我们前面已经安装了，所以直接进行第2步）
 
 
-<img src="/lesson3/8.png" class="m-0 h-60 rounded shadow" />
+<img src="/lesson3/8.png" class="m-0 h-50 rounded shadow" />
 
 
 ---
@@ -197,7 +188,7 @@ transition: fade-out
 # RStudio 的界面
 
 
-<img src="/lesson3/10.png" class="m-0 h-60 rounded shadow" />
+<img src="/lesson3/10.png" class="m-0 h-76 rounded shadow" />
 
 
 ---
